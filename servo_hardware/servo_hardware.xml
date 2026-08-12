@@ -1,0 +1,9 @@
+<library path="servo_hardware">
+  <class name="servo_hardware/ServoHardware"
+         type="servo_hardware::ServoHardware"
+         base_class_type="hardware_interface::SystemInterface">
+    <description>
+      ROS 2 Control hardware interface for servo control via serial communication.
+    </description>
+  </class>
+</library>
