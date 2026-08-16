@@ -32,7 +32,7 @@ def generate_launch_description():
 
     rviz_config_filepath = PathJoinSubstitution(
         [
-            FindPackageShare('servo_hardware_test'),
+            FindPackageShare('servo_hardware_demo'),
             'rviz',
             'display.rviz',
         ]
@@ -43,7 +43,7 @@ def generate_launch_description():
             'xacro ',
             PathJoinSubstitution(
                 [
-                    FindPackageShare('servo_hardware_test'),
+                    FindPackageShare('servo_hardware_demo'),
                     'urdf',
                     'servo_controller.urdf.xacro'
                 ]
@@ -69,7 +69,7 @@ def generate_launch_description():
         parameters=[
             PathJoinSubstitution(
                 [
-                    FindPackageShare('servo_hardware_test'),
+                    FindPackageShare('servo_hardware_demo'),
                     'config',
                     'controllers.yaml'
                 ]
@@ -108,6 +108,21 @@ def generate_launch_description():
         output='screen',
     )
 
+    attitude_publisher_node = Node(
+        package='servo_hardware_demo_helper',
+        executable='attitude_publisher_node',
+        name='servo_hardware_demo_helper',
+        parameters=[
+            {'roll_offset': 1.69},
+            {'pitch_offset': 1.75},
+        ],
+        remappings=[
+            ('/pose', '/deck_pose'),
+            ('commands', '/servo_joints/commands'),
+        ],
+        output='screen',
+    )
+
     return LaunchDescription(
         [
             device_arg,
@@ -115,5 +130,6 @@ def generate_launch_description():
             controller_manager_node,
             spawner_event_handler,
             rviz_node,
+            attitude_publisher_node,
         ]
     )

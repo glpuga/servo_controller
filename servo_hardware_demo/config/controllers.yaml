@@ -1,6 +1,6 @@
 controller_manager:
   ros__parameters:
-    update_rate: 100
+    update_rate: 50
     enforce_command_limits: true
 
     joint_state_broadcaster:
@@ -17,5 +17,3 @@ servo_joints:
     joints:
       - joint_0
       - joint_1
-      - joint_2
-      - joint_3

@@ -13,7 +13,7 @@
 # limitations under the License.
 
 cmake_minimum_required(VERSION 3.8)
-project(servo_hardware_test)
+project(servo_hardware_demo)
 
 find_package(ament_cmake REQUIRED)
 

@@ -31,16 +31,6 @@
         <state_interface name="position"/>
       </joint>
 
-      <joint name="joint_2">
-        <command_interface name="position"/>
-        <state_interface name="position"/>
-      </joint>
-
-      <joint name="joint_3">
-        <command_interface name="position"/>
-        <state_interface name="position"/>
-      </joint>
-
     </ros2_control>
 
   </xacro:macro>

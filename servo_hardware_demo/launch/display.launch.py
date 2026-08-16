@@ -25,7 +25,7 @@ from launch_ros.substitutions import FindPackageShare
 def generate_launch_description():
     rviz_config_filepath = PathJoinSubstitution(
         [
-            FindPackageShare('servo_hardware_test'),
+            FindPackageShare('servo_hardware_demo'),
             "rviz",
             "display.rviz",
         ]
@@ -42,7 +42,7 @@ def generate_launch_description():
             )
         ),
         launch_arguments={
-            "urdf_package": "servo_hardware_test",
+            "urdf_package": "servo_hardware_demo",
             "urdf_package_path": "urdf/servo_controller.urdf.xacro",
             "rviz_config": rviz_config_filepath,
             "jsp_gui": "true",
